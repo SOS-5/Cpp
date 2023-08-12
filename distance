@@ -1,0 +1,48 @@
+/*
+1.	Raju is late for class he needs to cross ab1 pathway to reach class. The time is 8:00 his class starts at 8:00 !
+ab1 pathway is N meters long and Raju walks at a speed of S meters per Minute.
+(Note the Greatest Common Divisor of N and S is always equal to S )
+There are X people in the pathway walking in the same direction as Raju each of them slows him down by Ai seconds. 
+Raju has a lenient teacher who gives attendance to all students who come less than equal to L minutes late. 
+Check if Raju gets attendance for his class. Print “YES” if he gets attendance or “NO” if he doesn’t get attendance.
+
+Input Format
+The first line contains 4 integers N S X L The second line contains X space separated 
+integers the values the time wasted to cross person Ai
+
+Constraints
+1<=N<=10000 1<=S<=10000 1<=X<=10000 1<=L<=10000 0<=Ai<=10000
+
+Output Format
+Print YES if he gets attendance else print NO
+
+*/
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n,s,x,l,i,t=0;
+    cin>>n>>s>>x>>l;
+    int a[x];
+    for(i=0;i<x;i++)
+    {
+        cin>>a[i];
+        t+=a[i];
+    }
+    t=t+abs((n*60)/s);
+    if(t<=(l*60))
+    {
+        cout<<"YES";
+    }
+    else{
+        cout<<"NO";
+    }
+    return 0;
+}
+
