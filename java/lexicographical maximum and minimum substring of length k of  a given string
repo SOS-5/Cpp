@@ -1,0 +1,44 @@
+import java.util.*;
+import java.lang.*;
+
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		Scanner inp=new Scanner(System.in);
+		int i,j,k,h1,y,l,c=0,h2;
+		System.out.print("Enter string: ");
+		String n1=inp.next();
+		String n=n1.toLowerCase();
+		System.out.print("Enter substring length: ");
+		k=inp.nextInt();
+		l=n.length();
+		String[] a1=new String[l];
+		String max="",min="",s1="",s2="z";
+		for(i=0;i<l;i++)
+		{
+		    y=i+k;
+		    if(y<l+1)
+		    {
+		        a1[i]=n.substring(i,y);
+		        c++;
+		    }
+		}
+		System.out.println("Substrings of length "+k+" are ");
+		for(i=0;i<c;i++)
+		    System.out.print(a1[i]+" ");
+		System.out.println();
+		for(i=0;i<c;i++)
+		    {
+		        h1=s1.compareTo(a1[i]);
+		        h2=s2.compareTo(a1[i]);
+		        
+		        if(h1<=0)
+		            s1=a1[i];
+		        
+		        if(h2>0)
+		            s2=a1[i];
+		    }
+		System.out.println("Lexicographical Maximum is "+s1);
+		System.out.println("Lexicographical Minimum is "+s2);
+	}}
